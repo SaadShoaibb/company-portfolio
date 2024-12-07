@@ -1,22 +1,44 @@
-<!-- ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import DefaultLayout from "../../layouts/Default.astro";
+import InteriorHero from "../../components/InteriorHero.astro";
+import { Tag } from "../../components/Tag";
+import { getPostColorFromCategory } from "../../utils/postUtils";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
-	return posts.map((post: { slug: any; }) => ({
+	const posts = await getCollection("blog");
+	return posts.map((post: { slug: any }) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
-const post = Astro.props;
+const post: Props = Astro.props;
+const {
+	data: { category, title, description },
+} = post;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost> -->
+<DefaultLayout>
+	<InteriorHero>
+		<div class="relative">
+			<div class="flex justify-center">
+				<Tag color={getPostColorFromCategory(category)}>{category}</Tag>
+			</div>
+			<h1 class="font-heading font-black lg:text-7xl text-center mt-4">
+				{title}
+			</h1>
+			<p class="text-center text-xl mt-8 text-zinc-400 max-w-2xl mx-auto">
+				{description}
+			</p>
 
-<div>blog post</div>
+			<div class="flex">
+				<div class="size-16 rounded-full bg-zinc-700 bg-cover bg-center">
+				</div>
+			</div>
+		</div>
+	</InteriorHero>
+	<Content />
+</DefaultLayout>

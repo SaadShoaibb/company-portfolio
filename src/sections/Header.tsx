@@ -57,14 +57,14 @@ export const HeaderSection = () => {
             <header className="sticky top-0 bg-zinc-900/50 backdrop-blur-lg z-40">
                 <div className="container">
                     <div className="flex justify-between items-center h-24">
-                        <div>
-                            <img src="/assets/images/logo.svg" alt="logo" />
+                        <div className="size-32 py-[56px] ml-4 hover:transition hover:-translate-y-1 hover:duration-500">
+                            <a href="/"><img src="/assets/images/logo.png" alt="logo" /></a>
                         </div>
 
                         <div className="flex gap-4 items-center">
 
                             {/* The get started button beside menu icon */}
-                            <CutCornerButton className="hidden md:inline-flex">Get Started</CutCornerButton>
+                            <CutCornerButton className="hidden md:inline-flex hover:-translate-y-1 hover:transition hover:duration-500">Get Started</CutCornerButton>
 
                             {/* The menu icon bars */}
                             <div className="size-10 relative cursor-pointer hover:bg-zinc-800 rounded-full transition-all duration-500" onClick={() => setIsOpen((curr) => !curr)}>

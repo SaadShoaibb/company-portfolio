@@ -1,0 +1,46 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+
+
+const portfolioData = [
+  {
+    title: "Custom Software Solutions",
+    category: "Ecommerce Software",
+    description: "Tailored software to meet your business needs.",
+    color: "cyan",
+    images: [
+      "/assets/images/dev/ecom.png",
+      "/assets/images/heroseo.png",
+      "/images/software3.jpg",
+    ],
+  },
+  {
+    title: "Travel Agency ",
+    category: "Software-Designs",
+    description: "Unique and creative Front-end Travel Agency website.",
+    color: "lime",
+    images: [
+      "/images/logo1.jpg",
+      "/images/logo2.jpg",
+    ],
+  },
+  {
+    title: "CraftyAI",
+    category: "Generative AI Software",
+    description: "Comprehensive AI solutions to grow your software as a service business.",
+    color: "violet",
+    images: [
+      "/images/marketing1.jpg",
+      "/images/marketing2.jpg",
+      "/images/marketing3.jpg",
+      "/images/marketing4.jpg",
+    ],
+  },
+];
+---
+
+
+<DefaultLayout>
+<PortfolioShowcase portfolioItems={portfolioData}/>
+</DefaultLayout>

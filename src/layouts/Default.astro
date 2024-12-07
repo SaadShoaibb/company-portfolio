@@ -1,4 +1,9 @@
 ---
+import { CallToAction } from "../sections/CallToAction";
+import { Footer } from "../sections/Footer";
+import { HeaderSection } from "../sections/Header";
+import {CursorAnimation} from "../components/CursorAnimation";
+import {SparkleBackground} from "../components/Sparkles";
 import "../styles/global.css";
 ---
 
@@ -16,6 +21,11 @@ import "../styles/global.css";
     />
   </head>
   <body>
+    <CursorAnimation client:load />
+    <SparkleBackground client:load />
+    <HeaderSection client:load />
     <slot />
+    <CallToAction client:load/>
+    <Footer/>
   </body>
 </html>

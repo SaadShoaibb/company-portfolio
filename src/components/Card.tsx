@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from "react"
 import { twMerge } from "tailwind-merge"
 import { TextButton } from "./TextButton";
 
-export const Card = (props: ComponentPropsWithoutRef<'div'> & {color?: string; buttonText?: string}) =>{
+export const Card = (props: ComponentPropsWithoutRef<'div'> & {color?: string; buttonText?: string;}) =>{
     const {color, children,className,buttonText} = props;
     return (
         <div className={twMerge("relative z-0 p-8 md:p-10 group",className)} >
