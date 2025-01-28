@@ -1,3 +1,5 @@
+"use client"
+
 import { useRef } from "react";
 import { Circle } from "../components/Circle";
 import { CutCornerButton } from "../components/CutCornerButton";

@@ -1,3 +1,5 @@
+"use client"
+
 import { twMerge } from "tailwind-merge";
 import { TextButton } from "../components/TextButton";
 import { useEffect, useState } from "react";
@@ -11,6 +13,7 @@ export const FeaturesCardsSection = () => {
             title: 'Marketing Collateral',
             description: 'Unlock the vast potential of your business through our well tailored digital marketing services',
             color: 'fuchsia',
+            link:'/marketing'
 
         },
 
@@ -19,6 +22,7 @@ export const FeaturesCardsSection = () => {
             title: 'Software Development / Design',
             description: 'Get unique and priceless modern software, ranging from front-end, full-stack to mobile apps.',
             color: 'cyan',
+            link:'/dev'
         },
 
         {
@@ -26,6 +30,7 @@ export const FeaturesCardsSection = () => {
             title: 'Logo / NFT Design',
             description: 'Get High value modernized, minimalistic or tech savvy customized designs, as suited for your persona, company or business.',
             color: 'lime',
+            link:'/design'
         },
 
         {
@@ -33,14 +38,15 @@ export const FeaturesCardsSection = () => {
             title: 'SEO Optimization',
             description: 'Scale your online presence through our high value search engine optimization team ready to grow your internet profile!',
             color: 'violet',
-
+            link:'/seo'
         },
 
         {
-            image: '/assets/images/seo.png',
+            image: '/assets/images/animation.png',
             title: 'Video Animations',
             description: 'We Provide jaw-dropping customized animations tailored to our clients preferences be it 2D or 3D our team always has the answer.',
             color: 'red',
+            link:'/video'
         }
 
 
@@ -67,7 +73,7 @@ export const FeaturesCardsSection = () => {
 
                 <div className="mt-36 lg:mt-48 flex">
                     <div className="flex flex-none gap-8">
-                        {cardData.map(({ image, title, description, color }, cardIndex) => (
+                        {cardData.map(({ image, title, description, color,link }, cardIndex) => (
                             <div 
                             className="inline-flex transition-all duration-500"
                             onMouseEnter={() => setIsHovered(true)}
@@ -91,7 +97,7 @@ export const FeaturesCardsSection = () => {
                                 <p className="text-lg text-zinc-400 mt-4">{description}</p>
 
                                 <div className="flex justify-between mt-12">
-                                    <TextButton color={color}>Learn More</TextButton>
+                                  <a href={link}> <TextButton color={color}>Learn More</TextButton></a>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-8 text-zinc-500 group-hover:text-zinc-300 transition duration-300 -translate-x-2 group-hover:translate-x-0">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                                     </svg>

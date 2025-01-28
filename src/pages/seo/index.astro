@@ -1,0 +1,23 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+
+const seoOptimizationData = [
+  {
+    title: "SEO Optimization",
+    category: "SEO Services",
+    description: "Enhance your search engine rankings and reach more customers.",
+    color: "green",
+    images: [
+      "/images/seo1.jpg",
+    ],
+    link: "/projects/seo-optimization",
+  }
+];
+---
+
+<DefaultLayout>
+<PortfolioShowcase portfolioItems={seoOptimizationData}/>
+<CallToAction client:load/>
+</DefaultLayout>

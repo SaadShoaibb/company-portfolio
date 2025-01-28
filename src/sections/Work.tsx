@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "../components/Card";
 import { Tag } from "../components/Tag";
 import { CutCornerButton } from "../components/CutCornerButton";
@@ -10,7 +12,8 @@ interface PortfolioItem {
   category: string;
   description: string;
   color: string;
-  images: string[]; // Array of images for each card
+  images: string[];
+  link: string;
 }
 
 export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) => {
@@ -20,7 +23,6 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
   const [activeImageIndex, setActiveImageIndex] = useState<number[]>(() =>
     Array(portfolioItems.length).fill(0)
   );
-  const [isHovered, setIsHovered] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -41,7 +43,6 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
 
     return () => clearInterval(interval);
   }, [portfolioItems]);
-
 
   return (
     <section className="py-36">
@@ -64,14 +65,13 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
         >
           {/* Left Column */}
           <div className="flex flex-col gap-8">
-            {portfolioItems.map(({ title, category, description, color, images }, index) => (
+            {portfolioItems.map(({ title, category, description, color, images, link }, index) => (
               <Card
                 key={index}
                 buttonText="View Project"
                 color={color}
+                link={link} // Dynamically pass the link
                 className={twMerge((index === 1 || index === 3) && "md:hidden")}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
               >
                 <div className="relative w-full h-56 rounded-lg overflow-hidden hover:-translate-y-2 hover:duration-500 hover:transition">
                   {/* Image Slider */}
@@ -80,15 +80,15 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
                       key={imageIndex}
                       src={image}
                       alt={`Portfolio ${index} - Image ${imageIndex}`}
-                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${imageIndex === activeImageIndex[index]
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        imageIndex === activeImageIndex[index]
                           ? "opacity-100"
                           : "opacity-0"
-                        }`}
+                      }`}
                     />
                   ))}
-
                 </div>
-                <Tag className="" color={color}>{category}</Tag>
+                <Tag color={color}>{category}</Tag>
                 <h3 className="font-heading font-black text-3xl mt-3">{title}</h3>
                 <p className="text-lg text-zinc-400 mt-6">{description}</p>
               </Card>
@@ -97,14 +97,13 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
 
           {/* Right Column */}
           <div className="hidden md:flex flex-col gap-8 mt-16">
-            {portfolioItems.map(({ title, category, description, color, images }, index) => (
+            {portfolioItems.map(({ title, category, description, color, images, link }, index) => (
               <Card
                 key={index}
                 buttonText="View Project"
                 color={color}
+                link={link} // Dynamically pass the link
                 className={twMerge((index === 0 || index === 2) && "md:hidden")}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
               >
                 <div className="relative w-full h-56 rounded-lg overflow-hidden hover:-translate-y-2 hover:duration-500 hover:transition">
                   {/* Image Slider */}
@@ -113,14 +112,15 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
                       key={imageIndex}
                       src={image}
                       alt={`Portfolio ${index} - Image ${imageIndex}`}
-                      className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${imageIndex === activeImageIndex[index]
+                      className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${
+                        imageIndex === activeImageIndex[index]
                           ? "opacity-100 scale-100"
                           : "opacity-0 scale-90"
-                        }`}
+                      }`}
                     />
                   ))}
                 </div>
-                <Tag className="mt-4" color={color}>{category}</Tag>
+                <Tag color={color}>{category}</Tag>
                 <h3 className="font-heading font-black text-3xl mt-3">{title}</h3>
                 <p className="text-lg text-zinc-400 mt-6">{description}</p>
               </Card>

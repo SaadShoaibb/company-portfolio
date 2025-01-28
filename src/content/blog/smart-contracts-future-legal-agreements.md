@@ -8,7 +8,7 @@ slug: "software-development-future-innovation"
 author:
   name: "John Smith"
   title: "Sr. Developer - BlockWorld"
-  image: "/assets/images/john.jpg"
+  image: "/assets/images/avatar-cameron-yang.jpg"
 ---
 
 ## Introduction to Software Development

@@ -1,0 +1,23 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+
+const digitalMarketingData = [
+  {
+    title: "Social Media Marketing",
+    category: "Digital Marketing",
+    description: "Boost your brand's online presence with targeted strategies.",
+    color: "red",
+    images: [
+      "/images/marketing1.jpg",
+    ],
+    link: "/projects/social-media-marketing",
+  }
+];
+---
+
+<DefaultLayout>
+<PortfolioShowcase portfolioItems={digitalMarketingData}/>
+<CallToAction client:load/>
+</DefaultLayout>

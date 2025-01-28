@@ -7,7 +7,7 @@ slug: "digital-marketing-scalability-challenges-solutions"
 author:
   name: "Alice Monroe"
   title: "Digital Marketing Strategist - ChainWave"
-  image: "/assets/images/alice.jpg"
+  image: "/assets/images/avatar-noel-baldwin.jpg"
 
 
 ---

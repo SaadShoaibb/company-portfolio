@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from "../../layouts/Default.astro";
 import { PortfolioShowcase } from "../../sections/Work";
-
+import { CallToAction } from "../../sections/CallToAction";
 
 const portfolioData = [
   {
@@ -11,12 +11,11 @@ const portfolioData = [
     color: "cyan",
     images: [
       "/assets/images/dev/ecom.png",
-      "/assets/images/heroseo.png",
-      "/images/software3.jpg",
     ],
+    link: ""
   },
   {
-    title: "Travel Agency ",
+    title: "Travel Agency",
     category: "Software-Designs",
     description: "Unique and creative Front-end Travel Agency website.",
     color: "lime",
@@ -24,6 +23,7 @@ const portfolioData = [
       "/images/logo1.jpg",
       "/images/logo2.jpg",
     ],
+    link: ""
   },
   {
     title: "CraftyAI",
@@ -31,16 +31,37 @@ const portfolioData = [
     description: "Comprehensive AI solutions to grow your software as a service business.",
     color: "violet",
     images: [
-      "/images/marketing1.jpg",
-      "/images/marketing2.jpg",
-      "/images/marketing3.jpg",
-      "/images/marketing4.jpg",
+      "/assets/images/dev/craftyai.png",
     ],
+    link: "https://craftyai.vercel.app/"
   },
 ];
 ---
 
-
 <DefaultLayout>
-<PortfolioShowcase portfolioItems={portfolioData}/>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Explore the World of Software Development
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Software development plays a crucial role in building the digital presence of businesses and individuals alike. It encompasses a wide range of services and expertise, from creating simple static websites to developing advanced, interactive web applications.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        At our core, we specialize in diverse areas of software development, including:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>Ecommerce Development:</strong> Custom-tailored platforms designed to enhance the online shopping experience.</li>
+        <li><strong>Front-end Development:</strong> Creative and visually appealing interfaces for websites and web apps.</li>
+        <li><strong>Generative AI Solutions:</strong> Cutting-edge artificial intelligence tools that redefine how businesses operate online.</li>
+        <li><strong>Responsive Web Design:</strong> Websites that adapt seamlessly to all screen sizes, ensuring a flawless user experience.</li>
+      </ul>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our portfolio showcases our dedication to providing innovative solutions tailored to the unique needs of each project. Dive into our recent work to see how we bring ideas to life.
+      </p>
+    </div>
+  </section>
+  
+  <PortfolioShowcase portfolioItems={portfolioData} />
+  <CallToAction client:load />
 </DefaultLayout>

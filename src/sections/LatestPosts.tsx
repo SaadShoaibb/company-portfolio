@@ -1,3 +1,5 @@
+"use client"
+
 import type { CollectionEntry } from "astro:content"
 import { Card } from "../components/Card"
 import { getPostColorFromCategory } from "../utils/postUtils"
@@ -60,7 +62,7 @@ export const LatestPosts = (props: {
 
                 </motion.div>
                 <div className="flex justify-center mt-48 md:mt-32">
-                    <CutCornerButton>Read The Blog</CutCornerButton>
+                    <a href="/blog"><CutCornerButton>Read The Blog</CutCornerButton></a>
                 </div>
             </div>
         </section>

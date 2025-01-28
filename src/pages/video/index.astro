@@ -1,0 +1,23 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+
+const animationData = [
+  {
+    title: "3D Animations",
+    category: "Animation",
+    description: "Engaging 3D animations to captivate your audience.",
+    color: "blue",
+    images: [
+      "/images/animation1.jpg",
+    ],
+    link: "/projects/3d-animations",
+  }
+];
+---
+
+<DefaultLayout>
+<PortfolioShowcase portfolioItems={animationData}/>
+<CallToAction client:load/>
+</DefaultLayout>

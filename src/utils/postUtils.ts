@@ -4,6 +4,7 @@ export const getPostColorFromCategory = (category: string) =>{
         case'Software Development': return 'cyan';
         case 'Nft':return 'violet';
         case 'Animations': return 'red';
+        case 'Technology': return 'orange';
         default:
             return 'fuchsia';
     }

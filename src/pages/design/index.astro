@@ -1,0 +1,35 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import { PortfolioShowcase } from "../../sections/Work";
+import { CallToAction } from "../../sections/CallToAction";
+
+const graphicsDesignData = [
+  {
+    title: "Brand Identity Design",
+    category: "Graphics Design",
+    description: "Creating unique and professional brand identities.",
+    color: "purple",
+    images: [
+      "/images/graphics1.jpg",
+      "/images/graphics2.jpg",
+    ],
+    link: "craftyai.vercel.app",
+  },
+  {
+    title: "UI/UX Design",
+    category: "Graphics Design",
+    description: "Intuitive and engaging user interface designs.",
+    color: "orange",
+    images: [
+      "/images/graphics3.jpg",
+      "/images/graphics4.jpg",
+    ],
+    link: "/projects/ui-ux-design",
+  }
+];
+---
+
+<DefaultLayout>
+<PortfolioShowcase portfolioItems={graphicsDesignData}/>
+<CallToAction client:load/>
+</DefaultLayout>

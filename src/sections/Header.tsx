@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from "react";
 import { CutCornerButton } from "../components/CutCornerButton";
 import { Hexagon } from "../components/Hexagon";
@@ -64,7 +66,7 @@ export const HeaderSection = () => {
                         <div className="flex gap-4 items-center">
 
                             {/* The get started button beside menu icon */}
-                            <CutCornerButton className="hidden md:inline-flex hover:-translate-y-1 hover:transition hover:duration-500">Get Started</CutCornerButton>
+                          <a href="/contact"> <CutCornerButton className="hidden md:inline-flex hover:-translate-y-1 hover:transition hover:duration-500">Get Started</CutCornerButton></a> 
 
                             {/* The menu icon bars */}
                             <div className="size-10 relative cursor-pointer hover:bg-zinc-800 rounded-full transition-all duration-500" onClick={() => setIsOpen((curr) => !curr)}>

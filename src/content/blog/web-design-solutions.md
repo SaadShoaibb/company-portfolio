@@ -7,7 +7,7 @@ slug: "web-design-future-digital"
 author:
   name: "Emily Davis"
   title: "Lead Designer - PixelWave Studio"
-  image: "/assets/images/emily.jpg"
+  image: "/assets/images/avatar-erica-wyatt.jpg"
 ---
 
 ## Understanding the Basics of Blockchain in Healthcare

@@ -1,3 +1,5 @@
+"use client"
+
 import { useRef } from "react"
 import { Circle } from "../components/Circle"
 import { CutCornerButton } from "../components/CutCornerButton"
@@ -43,7 +45,7 @@ export const CallToAction = () => {
                     <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-center">Ready to <span className="block" >get started?</span></h2>
                     <p className="text-xl lg:text-2xl max-w-sm text-zinc-400 text-center mt-8 mx-auto">Upgrade your company to a whole new level, with Evolisyss. </p>
                     <div className="flex justify-center mt-12">
-                        <CutCornerButton>Contact Us</CutCornerButton>
+                    <a href="/contact"><CutCornerButton>Contact Us</CutCornerButton></a>
                     </div>
                 </div>
             </div>
