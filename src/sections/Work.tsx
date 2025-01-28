@@ -129,7 +129,7 @@ export const PortfolioShowcase = (props: { portfolioItems: PortfolioItem[] }) =>
         </motion.div>
 
         <div className="flex justify-center mt-48 md:mt-32">
-          <CutCornerButton>Get Your Software!</CutCornerButton>
+          <CutCornerButton>Get Your Solution!</CutCornerButton>
         </div>
       </div>
     </section>

@@ -18,6 +18,25 @@ const seoOptimizationData = [
 ---
 
 <DefaultLayout>
-<PortfolioShowcase portfolioItems={seoOptimizationData}/>
-<CallToAction client:load/>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Mastering SEO for Online Success
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Search Engine Optimization (SEO) is the backbone of digital visibility. Optimizing your website ensures that it ranks higher on search engines, making it easier for potential customers to find your business.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our SEO services focus on:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>Keyword Research:</strong> Targeting the right keywords to maximize search rankings.</li>
+        <li><strong>On-Page Optimization:</strong> Enhancing site structure and content for better visibility.</li>
+        <li><strong>Technical SEO:</strong> Improving website speed, security, and mobile-friendliness.</li>
+        <li><strong>Backlink Strategy:</strong> Building high-quality links to establish authority.</li>
+      </ul>
+    </div>
+  </section>
+  <PortfolioShowcase portfolioItems={seoOptimizationData}/>
+  <CallToAction client:load/>
 </DefaultLayout>

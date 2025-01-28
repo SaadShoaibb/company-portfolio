@@ -18,6 +18,29 @@ const animationData = [
 ---
 
 <DefaultLayout>
-<PortfolioShowcase portfolioItems={animationData}/>
-<CallToAction client:load/>
+  <section class="py-20 bg-zinc-900 text-white">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl">
+        Bring Stories to Life with Animation
+      </h1>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-6">
+        Video animation is a powerful way to communicate ideas, tell compelling stories, and enhance brand engagement. Whether it’s for marketing, education, or entertainment, animations provide an immersive and visually appealing experience.
+      </p>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        Our expertise in animation includes:
+      </p>
+      <ul class="text-lg lg:text-xl text-zinc-400 mt-4 space-y-2 text-left mx-auto max-w-3xl">
+        <li><strong>3D Animations:</strong> Stunning three-dimensional visuals that bring products, concepts, and characters to life.</li>
+        <li><strong>Motion Graphics:</strong> Dynamic graphics that make information engaging and easy to understand.</li>
+        <li><strong>Explainer Videos:</strong> Informative and concise animations that simplify complex ideas for your audience.</li>
+        <li><strong>Character Animation:</strong> Expressive and fluid animations that add personality and charm to digital storytelling.</li>
+      </ul>
+      <p class="text-lg lg:text-xl text-zinc-400 mt-4">
+        We take pride in crafting high-quality animations tailored to your brand's vision. Explore our work and see how we can turn ideas into captivating visual experiences.
+      </p>
+    </div>
+  </section>
+
+  <PortfolioShowcase portfolioItems={animationData} />
+  <CallToAction client:load />
 </DefaultLayout>
